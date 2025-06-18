@@ -1,0 +1,29 @@
+Type: Package
+Package: testbot
+Title: Bring package test coverage to 100%
+Version: 0.0.1
+Authors@R: c(
+    person("Charlie", "Gao", , "charlie.gao@posit.co", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0750-061X")),
+    person("Posit Software, PBC", role = c("cph", "fnd"),
+           comment = c(ROR = "03wc8by49"))
+  )
+Description: This package uses an LLM to inspect existing package test
+    code and write new code to bring test coverage to 100%. This is
+    particularly useful for packages that contain compiled code, to ensure
+    that all code paths are hit and diagnostic tools such as Valgrind,
+    ASAN/UBSAN give more reliable results.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 4.2)
+Imports: 
+    btw
+Suggests: 
+    ellmer,
+    testthat (>= 3.0.0)
+Remotes: 
+    posit-dev/btw
+Config/testthat/edition: 3
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Roxygen: list(markdown = TRUE)

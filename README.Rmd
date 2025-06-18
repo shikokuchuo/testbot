@@ -1,0 +1,63 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# testbot
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/shikokuchuo/testbot/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/shikokuchuo/testbot/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/shikokuchuo/testbot/graph/badge.svg)](https://app.codecov.io/gh/shikokuchuo/testbot)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+Testbot aims to bring package test coverage up to 100%.
+
+This allows for packages with compiled code:
+
+(i) To catch segfaults along error paths / in edge cases
+(ii) To catch memory leaks, memory access errors and undefined behaviour by giving diagnostic tooling such as Valgrind and ASAN/UBSAN a wider surface to work on
+
+> Important! This package is highly experimental and its API is subject to change at any time.
+
+## Installation
+
+Install the development version of testbot:
+
+``` r
+pak::pak("shikokuchuo/testbot")
+```
+Testbot is built on the btw and ellmer packages and leverages the current state of the art in LLM agentic tool-calling. Hence, a pre-requisite is an Anthropic or OpenAI API key in a location that can be picked up by ellmer.
+
+## Instructions
+
+Just run `testbot()` in your package working directory.
+
+```{r}
+#| label: instructions
+#| eval: false
+r <- testbot::testbot()
+```
+
+An ellmer chat object is returned.
+The test file is generated as "tests/testthat/test-bot.R".
+
+## Example
+
+Example output of testbot running on itself:
+
+```{r}
+#| label: example
+testbot::testbot()
+```
