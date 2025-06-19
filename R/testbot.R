@@ -47,6 +47,6 @@ prompt <- paste(
   "Make sure the code covers all error code paths and edge cases.",
   "Formulate a succinct plan that when executed will achieve this goal.",
   "Do not write any files in generating the plan.",
-  "\nNow execute the plan.",
+  "Now execute the plan.",
   "Write the additional test code, without any comments, to a single new file saved at 'tests/testthat/test-bot.R'."
 )

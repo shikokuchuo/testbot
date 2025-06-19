@@ -1,7 +1,7 @@
 Type: Package
 Package: testbot
 Title: Bring package test coverage to 100%
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R: c(
     person("Charlie", "Gao", , "charlie.gao@posit.co", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0750-061X")),
@@ -14,6 +14,9 @@ Description: This package uses an LLM to inspect existing package test
     that all code paths are hit and diagnostic tools such as Valgrind,
     ASAN/UBSAN give more reliable results.
 License: MIT + file LICENSE
+URL: https://shikokuchuo.net/testbot,
+    https://github.com/shikokuchuo/testbot
+BugReports: https://github.com/shikokuchuo/testbot/issues
 Depends: 
     R (>= 4.2)
 Imports: 
@@ -25,5 +28,5 @@ Remotes:
     posit-dev/btw
 Config/testthat/edition: 3
 Encoding: UTF-8
-RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
